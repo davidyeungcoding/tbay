@@ -37,6 +37,7 @@ class Bid(Base):
     id = Column(Integer, primary_key=True)
     price = Column(Float, nullable=False)
     
+    bid_item_id = Column(Integer, ForeignKey('items.id'), nullable=False)
     bidder_id = Column(Integer, ForeignKey('users.id'), nullable=False)
     
 Base.metadata.create_all(engine)
